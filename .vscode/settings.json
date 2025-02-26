@@ -27,6 +27,7 @@
   "files.exclude": {
     "**/.DS_Store": true,
     "**/.git": true,
+    "**/next-env.d.ts": true,
     "**/.next": true,
     "**/.svn": true,
     "**/.hg": true,
@@ -146,6 +147,10 @@
     }
   },
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules/*/**",
+    "**/next-env.d.ts"
+  ],
 
   // Tailwind CSS
   "tailwindCSS.includeLanguages": {
