@@ -1,0 +1,47 @@
+{
+  "recommendations": [
+    // Linting and Formatting
+    //"dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+
+    // Themes and Icons
+    "sdras.night-owl",
+    "PKief.material-icon-theme",
+
+    // Live Server
+    "ritwickdey.LiveServer",
+
+    // Tailwind CSS Support
+    "bradlc.vscode-tailwindcss",
+
+    // Git and Version Control
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+
+    // JavaScript and React
+    "dsznajder.es7-react-js-snippets",
+    "xabikos.JavaScriptSnippets",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag",
+    "mgmcdermott.vscode-language-babel",
+
+    // Productivity Tools
+    "Gruntfuggly.todo-tree",
+    "christian-kohler.path-intellisense",
+    "naumovs.color-highlight",
+    "alefragnani.Bookmarks",
+    "usernamehw.errorlens",
+    "wix.vscode-import-cost",
+    "mike-co.import-sorter",
+    "meganrogge.template-string-converter",
+
+    // Markdown
+    "yzhang.markdown-all-in-one",
+
+    // SVG
+    "SimonSiefke.svg-preview",
+
+    // Code Snapshot
+    "adpyke.codesnap"
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  // Editor appearance and behavior
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 20,
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+
+  "editor.rulers": [
+    { "column": 80, "color": "#262020" },
+    { "column": 100, "color": "#391f0f" },
+    { "column": 120, "color": "#605a56" }
+  ],
+  "editor.tabSize": 2,
+  "editor.guides.bracketPairs": "active",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.renderWhitespace": "all",
+  "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "window.zoomLevel": 0,
+  "workbench.editor.enablePreview": false,
+
+  // File handling
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.next": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/node_modules": true,
+    "**/dist": true
+  },
+
+  // Live Server and SASS
+  "liveServer.settings.port": 5502,
+  "liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 3 version",
+    "Chrome >= 35",
+    "Firefox >= 38",
+    "Edge >= 10",
+    "Explorer >= 10",
+    "ie >= 10",
+    "iOS >= 8",
+    "Safari >= 8",
+    "Android 2.3",
+    "Android >= 4",
+    "Opera >= 12"
+  ],
+
+  // Formatting and linting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "always",
+    "source.addMissingImports.ts": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+
+  // Terminal and Git
+  "terminal.integrated.fontFamily": "Menlo for Powerline",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "git.enabled": true,
+  "git.path": "C:\\Program Files\\Git\\bin\\git.exe",
+  "git.autofetch": true,
+
+  // Miscellaneous
+  "window.menuBarVisibility": "toggle",
+  "window.restoreFullscreen": true,
+  "auto-rename-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "twig",
+    "html",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (Eex)"
+  ],
+  "auto-close-tag.enableAutoCloseTag": true,
+  "auto-close-tag.enableAutoCloseSelfClosingTag": true,
+
+  // Todo Tree
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.general.tags": ["NOTE", "TODO", "FIXME", "MARK", "[ ]", "[x]"],
+  "todo-tree.highlights.defaultHighlight": {
+    "type": "tag",
+    "fontWeight": "bold",
+    "foreground": "#000000",
+    "opacity": 90,
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "NOTE": {
+      "background": "#D99058",
+      "iconColour": "#D99058",
+      "icon": "file"
+    },
+    "TODO": {
+      "background": "#1C39DD",
+      "iconColour": "#1C39DD",
+      "icon": "checklist"
+    },
+    "FIXME": {
+      "background": "#C81D11",
+      "iconColour": "#C81D11",
+      "icon": "alert"
+    },
+    "MARK": {
+      "background": "#321279",
+      "iconColour": "#321279",
+      "icon": "bookmark"
+    },
+    "[ ]": {
+      "background": "#808080",
+      "iconColour": "#808080",
+      "icon": "square"
+    },
+    "[x]": {
+      "background": "#00A693",
+      "iconColour": "#00A693",
+      "icon": "square-fill"
+    }
+  },
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+
+  // Tailwind CSS
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "javascript": "javascript",
+    "javascriptreact": "javascriptreact",
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["tw`([^`]*)", "(?:class|className)=\"([^\"]*)"]
+  ],
+
+  // Emmet Configuration
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "javascriptreact": {
+      "profile": "jsx",
+      "inlineBreak": 0
+    }
+  },
+  "emmet.preferences": {
+    "jsx.className": "className"
+  },
+  "extensions.ignoreRecommendations": true,
+
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
+  "prettier.jsxSingleQuote": false,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "always",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
