@@ -31,6 +31,8 @@ const config: Config = {
           100: "#8e983f",
           300: "#edff66",
         },
+        black: "#1a0000",
+        white:"#fffff8",
         "persian-blue": "#0067a5",
         "azure-persian-blue": "#57c5c6",
         "turquoise-persian-blue": "#1c39bb",
