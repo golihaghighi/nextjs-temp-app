@@ -1,16 +1,25 @@
+/**
+ * Global Styles for Next.js Project
+ * 
+ * This file includes:
+ * - **Font imports** for custom typography.
+ * - **Tailwind CSS Base, Components, and Utilities**.
+ * - **Custom Tailwind classes** defined under `@layer utilities`.
+ * - **Advanced animations** using `@keyframes`.
+ * - **Hover effects and flexbox utilities** for responsiveness.
+ */
+
+/* Importing Custom Font */
 @import url("https://fonts.cdnfonts.com/css/general-sans");
 
+/* Tailwind Base, Components, and Utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  width: 100dvw;
-  overflow-x: hidden;
-  background-color: #fffff8;
-  font-family: "General Sans", sans-serif;
-}
 
+
+/* === FONT DEFINITIONS === */
 @layer base {
   @font-face {
     font-family: "circular-web";
@@ -38,57 +47,82 @@ body {
   }
 }
 
+/* === CUSTOM TAILWIND UTILITIES === */
 @layer utilities {
+  /* Border with opacity */
   .border-hsla {
     @apply border border-white/20;
   }
 
+  /* Navigation Hover Button */
   .nav-hover-btn {
-    @apply relative ms-10 font-general text-xl uppercase text-white after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300  hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
+    @apply relative ms-10 font-general text-xl uppercase text-white 
+      after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] 
+      after:w-full after:origin-bottom-right after:scale-x-0 
+      after:bg-white after:transition-transform after:duration-300 
+      after:ease-custom-ease hover:after:origin-bottom-left 
+      hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
   }
-  /* FIXME: add above: after:ease-[cubic-bezier(0.65_0.05_0.36_1)] */
 
+  /* Fullscreen Logo Styling */
   .nav-logo {
-    @apply  relative md:h-dvh  w-full;
+    @apply relative w-full md:h-dvh; /* Full height on medium screens */
   }
 
+  /* Floating Navigation Bar */
   .floating-nav {
     @apply bg-black rounded-lg border;
   }
 
+  /* Center Absolute Positioned Elements */
   .absolute-center {
     @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
   }
 
+  /* Flexbox Centering Utility */
   .flex-center {
     @apply flex justify-center items-center;
   }
 
+  /* Clip Path for Masking Effects */
   .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
+  /* Special Font for <b> Elements */
   .special-font b {
     font-family: "Zentry";
     font-feature-settings: "ss01" on;
+    @apply text-persian-red-90;
   }
 
+  /* Hero Section Title */
   .hero-heading {
-    @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+    @apply uppercase font-zentry font-black text-5xl 
+      sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
   }
 
+  /* About Section Text */
   .about-subtext {
-    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 
+      -translate-x-1/2 text-center font-circular-web text-lg 
+      md:max-w-[34rem];
   }
 
+  /* About Section Image */
   .about-image {
-    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
+    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 
+      origin-center -translate-x-1/2 overflow-hidden rounded-3xl 
+      md:w-[30vw];
   }
 
+  /* Animated Title for Sections */
   .animated-title {
-    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
+    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] 
+      sm:px-32 md:text-[6rem];
   }
 
+  /* Animated Words */
   .animated-word {
     @apply special-font font-zentry font-black opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
@@ -96,49 +130,36 @@ body {
     will-change: opacity, transform;
   }
 
+  /* Bento Tilt Effects */
   .bento-tilt_1 {
-    @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative border-hsla col-span-2 overflow-hidden rounded-md 
+      transition-transform duration-300 ease-out;
   }
 
   .bento-tilt_2 {
-    @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative col-span-1 row-span-1 overflow-hidden rounded-md 
+      transition-transform duration-300 ease-out;
   }
 
+  /* Bento Title */
   .bento-title {
-    @apply uppercase md:text-6xl text-4xl font-black font-zentry;
+    @apply uppercase md:text-6xl text-4xl font-black font-zentry text-persian-red-40;
   }
 
+  /* Story Image Container */
   .story-img-container {
-    @apply relative md:h-dvh h-[90vh] w-full;
+    @apply relative h-[90vh] w-full md:h-dvh;
     filter: url("#flt_tag");
   }
 
+  /* Story Image Mask */
   .story-img-mask {
-    @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
+    @apply absolute left-0 top-0 size-full overflow-hidden 
+      md:left-[20%] md:top-[-10%] md:size-4/5;
     clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
   }
 
-  .story-img-content {
-    @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
-    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
-  }
-
-  .gallery-img-container {
-    @apply size-64 overflow-hidden bg-violet-300;
-  }
-
-  .gallery-img {
-    @apply size-full bg-cover;
-  }
-
-  .gallery-img-4 {
-    @apply sm:size-80 md:h-96 md:w-[25rem] rounded-lg;
-  }
-
-  .sword-man-clip-path {
-    clip-path: polygon(16% 0, 89% 15%, 75% 100%, 0 97%);
-  }
-
+  /* Contact Section Clipping Paths */
   .contact-clip-path-1 {
     clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
   }
@@ -148,6 +169,7 @@ body {
   }
 }
 
+/* === ANIMATIONS === */
 .indicator-line {
   @apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
 }
@@ -157,10 +179,11 @@ body {
   animation-delay: calc(var(--animation-order) * 0.1s);
 }
 
+/* Indicator Line Animation */
 @keyframes indicator-line {
   0% {
     height: 4px;
-    transform: translateY(-0px);
+    transform: translateY(0px);
   }
   50% {
     height: 16px;
@@ -168,12 +191,11 @@ body {
   }
   100% {
     height: 4px;
-    transform: translateY(-0px);
+    transform: translateY(0px);
   }
 }
 
-/* From Uiverse.io by G4b413l */
-/* https://uiverse.io/G4b413l/tidy-walrus-92 */
+/* Rotating Three Body Loader */
 .three-body {
   --uib-size: 35px;
   --uib-speed: 0.8s;
@@ -185,94 +207,11 @@ body {
   animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
 }
 
-.three-body__dot {
-  position: absolute;
-  height: 100%;
-  width: 30%;
-}
-
-.three-body__dot:after {
-  content: "";
-  position: absolute;
-  height: 0%;
-  width: 100%;
-  padding-bottom: 100%;
-  background-color: var(--uib-color);
-  border-radius: 50%;
-}
-
-.three-body__dot:nth-child(1) {
-  bottom: 5%;
-  left: 0;
-  transform: rotate(60deg);
-  transform-origin: 50% 85%;
-}
-
-.three-body__dot:nth-child(1)::after {
-  bottom: 0;
-  left: 0;
-  animation: wobble1 var(--uib-speed) infinite ease-in-out;
-  animation-delay: calc(var(--uib-speed) * -0.3);
-}
-
-.three-body__dot:nth-child(2) {
-  bottom: 5%;
-  right: 0;
-  transform: rotate(-60deg);
-  transform-origin: 50% 85%;
-}
-
-.three-body__dot:nth-child(2)::after {
-  bottom: 0;
-  left: 0;
-  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15)
-    ease-in-out;
-}
-
-.three-body__dot:nth-child(3) {
-  bottom: -5%;
-  left: 0;
-  transform: translateX(116.666%);
-}
-
-.three-body__dot:nth-child(3)::after {
-  top: 0;
-  left: 0;
-  animation: wobble2 var(--uib-speed) infinite ease-in-out;
-}
-
 @keyframes spin78236 {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes wobble1 {
-  0%,
-  100% {
-    transform: translateY(0%) scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(-66%) scale(0.65);
-    opacity: 0.8;
-  }
-}
-
-@keyframes wobble2 {
-  0%,
-  100% {
-    transform: translateY(0%) scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(66%) scale(0.65);
-    opacity: 0.8;
   }
 }
