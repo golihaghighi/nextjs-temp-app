@@ -12,7 +12,7 @@ interface AnimTitleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export default function AnimatedTitle({ title, containerClass }: AnimTitleProps) {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

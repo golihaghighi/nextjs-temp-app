@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   textSize: string;
 }
 
-export function Button({ id,title,rightIcon,leftIcon, className,textSize, ...rest }: ButtonProps) {
+export function Button({ id,title,rightIcon="",leftIcon="", className="",textSize="text-xl", ...rest }: ButtonProps) {
   return (
     <button
       {...rest}
