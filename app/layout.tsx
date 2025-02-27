@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 // import localFont from "next/font/local";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/app/components/NavBar";
+import Footer from "./components/Footer";
+
 
 
 // const inter = localFont({
@@ -33,8 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-       
+        <NavBar />
         {children}
+        <Footer/>
       </body>
     </html>
   );

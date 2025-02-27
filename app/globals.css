@@ -48,6 +48,10 @@ body {
   }
   /* FIXME: add above: after:ease-[cubic-bezier(0.65_0.05_0.36_1)] */
 
+  .nav-logo {
+    @apply  relative md:h-dvh  w-full;
+  }
+
   .floating-nav {
     @apply bg-black rounded-lg border;
   }

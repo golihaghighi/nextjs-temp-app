@@ -56,15 +56,17 @@ export default function NavBar() {
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            <img src="/next.svg" alt="logo" className="w-10" />
-
+            <a href="/"><img src="/globe.svg" alt="logo" className="w-10" /></a>
+            {/* FIXME:correct image logo and nav-logo css class */}
             <Button
               id="product-button"
-              title="Products"
+              title="Contact Us"
               rightIcon={<TiLocationArrow />}
               leftIcon=""
               className="bg-white md:flex hidden items-center justify-center gap-1"
-            />
+              textSize="text-xs"
+            /> 
+            {/* FIXME:correct onclick url */}
           </div>
 
           {/* Navigation Links and Audio Button */}

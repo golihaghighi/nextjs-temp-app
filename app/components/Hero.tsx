@@ -40,7 +40,9 @@ export default function Hero() {
               title="Watch trailer"
               leftIcon={<TiLocationArrow />}
               rightIcon=""
-              className="text-white bg-persian-red flex-center gap-1"
+              className="text-black bg-persian-red flex-center gap-1"
+              textSize="text-xl"
+              
             />
           </div>
         </div>
