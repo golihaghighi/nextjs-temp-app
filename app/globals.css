@@ -89,7 +89,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .mask-hero {
-    @apply absolute inset-0 bg-persian-red-99 dark:bg-persian-red-1 opacity-65;
+    @apply absolute inset-0 bg-white dark:bg-black opacity-40;
   }
   /* Special Font for <b> Elements */
   .special-font b {

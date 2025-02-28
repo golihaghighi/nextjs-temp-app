@@ -5,9 +5,10 @@ import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { TiLocationArrow } from "react-icons/ti";
+import { TiMediaPlay } from "react-icons/ti";
 import { TiWeatherSunny } from "react-icons/ti";
 import { TiWeatherNight } from "react-icons/ti";
+import { TiMail } from "react-icons/ti";
 import { usePathname } from "next/navigation";
 import { Button } from "./Button";
 import navItems from "@/app/lib/navItems";
@@ -115,7 +116,7 @@ export default function NavBar() {
               id="product-button"
               title="Contact Us"
               src="/contact"
-              rightIcon={<TiLocationArrow />}
+              rightIcon={<TiMail />}
               className="bg-white md:flex hidden items-center justify-center gap-1"
               textSize="text-xs"
             />
@@ -123,18 +124,42 @@ export default function NavBar() {
 
           {/* Navigation Links */}
           <div className="flex h-full items-center">
-            <div className="hidden md:block">
+            <div className="hidden md:flex items-center space-x-2">
               {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={`${item.href.toLowerCase()}`}
-                  className={clsx("nav-hover-btn", {
-                    "nav-btn-active":
-                      pathname.toLowerCase() === item.href.toLowerCase(),
-                  })}
-                >
-                  {item.name}
-                </Link>
+                <div key={index} className="relative group">
+                  <Link
+                    href={`${item.href.toLowerCase()}`}
+                    className={clsx("nav-hover-btn", {
+                      "nav-btn-active":
+                        pathname.toLowerCase() === item.href.toLowerCase(),
+                    })}
+                  >
+                    
+                    {item.name}
+                   
+                  </Link>
+                  {item.submenu && (
+                    <div
+                      className="absolute left-auto  hidden group-hover:flex flex-col bg-white dark:bg-gray-800 shadow-lg rounded-md pointer-events-auto z-50"
+                      onMouseEnter={(e) =>
+                        e.currentTarget.classList.add("flex")
+                      }
+                      onMouseLeave={(e) =>
+                        e.currentTarget.classList.remove("flex")
+                      }
+                    >
+                      {item.submenu.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="block w-auto px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>

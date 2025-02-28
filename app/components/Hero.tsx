@@ -70,12 +70,11 @@ export default function Hero() {
      * - `relative h-dvh w-screen overflow-x-hidden` → Fullscreen section without horizontal scrolling.
      */
     <div className="relative h-dvh w-screen overflow-x-hidden">
-      
-      {/** 
+      {/**
        * Hero Background & Container
        *
        * Tailwind CSS:
-       * - `relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-white` → 
+       * - `relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-white` →
        *   Full viewport height, white background, rounded corners.
        */}
       <div
@@ -83,97 +82,95 @@ export default function Hero() {
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-white"
       >
         <div>
-          {/** 
-           * Clickable Mask Box 
+          {/**
+           * Clickable Mask Box
            *
            * Tailwind CSS:
-           * - `mask-clip-path absolute-center absolute z-50 size-64` → 
+           * - `mask-clip-path absolute-center absolute z-50 size-64` →
            *   Centers the element and sets it to `64px` square.
-           * - `cursor-pointer overflow-hidden rounded-lg` → 
+           * - `cursor-pointer overflow-hidden rounded-lg` →
            *   Makes it interactive and gives rounded edges.
            */}
           <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg"></div>
-          
+
           <img
             src="/images/HeroHome.webp"
             alt="Futuristic digital cityscape with AI-driven marketing"
             className="absolute left-0 top-0 size-full object-cover object-center mix-blend-multiply"
           />
           <div className="mask-hero"></div>
-          
         </div>
 
-        {/** 
+        {/**
          * Main Hero Title (Large Text)
          *
          * Tailwind CSS:
-         * - `special-font hero-heading absolute bottom-5 right-5 z-40 text-white` → 
+         * - `special-font hero-heading absolute bottom-5 right-5 z-40 text-white` →
          *   Places text at bottom-right with high stacking order.
          */}
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-white">
           G<b>A</b>MING
         </h1>
 
-        {/** 
+        {/**
          * Text & Call-to-Action Section
          *
          * Tailwind CSS:
-         * - `absolute left-0 top-0 z-40 size-full` → 
+         * - `absolute left-0 top-0 z-40 size-full` →
          *   Positions the content on top of the full section.
          */}
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
-            
             {/** Hero Heading */}
             <h1 className="special-font hero-heading text-white">
               <b>c</b>yber<b>s</b>et
             </h1>
 
-            {/** 
-             * Hero Description 
+            {/**
+             * Hero Description
              *
              * Tailwind CSS:
-             * - `mb-5 max-w-64 font-robert-regular text-white` → 
+             * - `mb-5 max-w-64 font-robert-regular text-white` →
              *   Limits text width, applies custom font, and sets text to white.
              */}
             <p className="mb-5 max-w-64 font-robert-regular text-white">
               Enter the Metagame Layer <br /> Unleash the Play Economy
             </p>
 
-            {/** 
-             * Call-to-Action Button 
+            {/**
+             * Call-to-Action Button
              *
              * Tailwind CSS:
-             * - `text-black bg-persian-red flex-center gap-1` → 
+             * - `text-black bg-persian-red flex-center gap-1` →
              *   Red background, black text, flexbox centering, spacing.
              */}
-             <div className="flex space-x-2">
-            <Button
-              id="watch-trailer"
-              title="Watch trailer"
-              leftIcon={<TiLocationArrow />}
-              rightIcon=""
-              className="text-white bg-persian-red-90 flex-center gap-1"
-              textSize="text-xl"
-            />
-             <Button
-              id="watch-trailer"
-              title="Watch trailer"
-              leftIcon={<TiLocationArrow />}
-              rightIcon=""
-              className="text-black bg-white flex-center gap-1"
-              textSize="text-xl"
-            />
+            <div className="flex space-x-2">
+              <Button
+                id="watch-trailer"
+                title="Watch trailer"
+                leftIcon={<TiLocationArrow />}
+                rightIcon=""
+                className="text-white bg-persian-red-90 flex-center gap-1"
+                textSize="text-xl"
+              />
+              <Button
+                id="watch-trailer"
+                title="Watch trailer"
+                leftIcon={<TiLocationArrow />}
+                rightIcon=""
+                className="text-black bg-white flex-center gap-1"
+                textSize="text-xl"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      {/** 
-       * Duplicate Hero Title for Effect 
+      {/**
+       * Duplicate Hero Title for Effect
        *
        * Tailwind CSS:
-       * - `special-font hero-heading absolute bottom-5 right-5 text-black` → 
+       * - `special-font hero-heading absolute bottom-5 right-5 text-black` →
        *   Second instance of the text in black for a layered effect.
        */}
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
