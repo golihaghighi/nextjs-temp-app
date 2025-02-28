@@ -51,7 +51,9 @@
   .border-hsla {
     @apply border border-white/30;
   }
-
+.nav-btn-active{
+  @apply bg-persian-red-80  rounded-lg p-2;
+}
   /* Navigation Hover Button */
   .nav-hover-btn {
     @apply relative ms-10 font-general text-xl uppercase text-white 
@@ -87,7 +89,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .mask-hero {
-    @apply absolute inset-0 bg-persian-red-99 opacity-65;
+    @apply absolute inset-0 bg-persian-red-99 dark:bg-persian-red-1 opacity-65;
   }
   /* Special Font for <b> Elements */
   .special-font b {

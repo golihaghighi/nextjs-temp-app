@@ -4,34 +4,36 @@ import clsx from "clsx";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { TiLocationArrow } from "react-icons/ti";
-
+import { TiWeatherSunny } from "react-icons/ti";
+import { TiWeatherNight } from "react-icons/ti";
+import { usePathname } from "next/navigation";
 import { Button } from "./Button";
-// import Image from "next/image";
-
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+import navItems from "@/app/lib/navItems";
+// Navigation items
 
 export default function NavBar() {
-  // Define navContainerRef before using it
+  const pathname = usePathname();
   const navContainerRef = useRef<HTMLDivElement | null>(null);
-
   const { y: currentScrollY } = useWindowScroll();
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false); // ✅ Move state outside of useEffect
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const logoRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
-    if (!navContainerRef.current) return; // Ensure the ref exists before modifying classes
+    if (!navContainerRef.current) return;
 
     if (currentScrollY === 0) {
-      // Topmost position: show navbar without floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
       setIsNavVisible(false);
       navContainerRef.current.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
-      // Scrolling up: show navbar with floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.add("floating-nav");
     }
@@ -47,47 +49,105 @@ export default function NavBar() {
     });
   }, [isNavVisible]);
 
+  // ✅ Apply dark mode to document
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
+  // ✅ Rotate logo on hover
+  useEffect(() => {
+    const logoElement = logoRef.current;
+    if (!logoElement) return;
+
+    const handleMouseOver = () => {
+      gsap.to(logoElement, {
+        rotation: 360,
+        duration: 1,
+        ease: "power3.inOut",
+      });
+    };
+
+    const handleMouseOut = () => {
+      gsap.to(logoElement, { rotation: 0, duration: 1, ease: "power3.inOut" });
+    };
+
+    logoElement.addEventListener("mouseover", handleMouseOver);
+    logoElement.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      logoElement.removeEventListener("mouseover", handleMouseOver);
+      logoElement.removeEventListener("mouseout", handleMouseOut);
+    };
+  }, []);
+
+  // ✅ Toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // ✅ Toggle mobile menu
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      gsap.to(menuRef.current, { height: 0, opacity: 0, duration: 0.5 });
+    } else {
+      gsap.to(menuRef.current, { height: "auto", opacity: 1, duration: 0.5 });
+    }
+  };
+
   return (
     <div
-      ref={navContainerRef} // ✅ Attach the ref to the div
+      ref={navContainerRef}
       className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            <a href="/"><img src="/globe.svg" alt="logo" className="w-10" /></a>
-            {/* FIXME:correct image logo and nav-logo css class */}
+            <Link href="/">
+              <img src="/globe.svg" alt="logo" className="w-10" ref={logoRef} />
+            </Link>
             <Button
               id="product-button"
               title="Contact Us"
               src="/contact"
               rightIcon={<TiLocationArrow />}
-              leftIcon=""
               className="bg-white md:flex hidden items-center justify-center gap-1"
               textSize="text-xs"
-            /> 
-           
+            />
           </div>
 
-          {/* Navigation Links and Audio Button */}
+          {/* Navigation Links */}
           <div className="flex h-full items-center">
             <div className="hidden md:block">
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
+                  href={`${item.href.toLowerCase()}`}
+                  className={clsx("nav-hover-btn", {
+                    "nav-btn-active":
+                      pathname.toLowerCase() === item.href.toLowerCase(),
+                  })}
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>
+
+          {/* Dark Mode Toggle Button */}
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 ml-4 border rounded-full dark:bg-gray-800 dark:text-white"
+          >
+            {isDarkMode ? <TiWeatherNight /> : <TiWeatherSunny />}
+          </button>
         </nav>
       </header>
     </div>
   );
-  // FIXME: add sub mega menu
-  // FIXME: add mobibe menu
 }
