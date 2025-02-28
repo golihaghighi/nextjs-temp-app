@@ -78,7 +78,7 @@ export default function About() {
          * - `uppercase` → Transforms text to uppercase.
          * - `md:text-[10px]` → Reduces text size to 10px on medium screens (`md` breakpoint).
          */}
-        <p className="font-general text-sm uppercase md:text-[10px]">
+        <p className="subtitle uppercase ">
           Welcome to Zentry
         </p>
 

@@ -106,7 +106,7 @@ export default function FloatingImage() {
          * - `font-general text-sm uppercase` → Uses general font, small text size, and uppercase letters.
          * - `md:text-[10px]` → On medium screens, reduces text size to `10px`.
          */}
-        <p className="font-general text-2xl uppercase md:text-base">
+        <p className="subtitle uppercase">
           the multiversal ip world
         </p>
 

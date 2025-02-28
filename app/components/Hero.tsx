@@ -93,13 +93,14 @@ export default function Hero() {
            *   Makes it interactive and gives rounded edges.
            */}
           <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg"></div>
-
-          {/** Background Image */}
+          
           <img
-            src="/images/entrance.webp"
-            alt="Hero Background"
-            className="absolute left-0 top-0 size-full object-cover object-center"
+            src="/images/HeroHome.webp"
+            alt="Futuristic digital cityscape with AI-driven marketing"
+            className="absolute left-0 top-0 size-full object-cover object-center mix-blend-multiply"
           />
+          <div className="mask-hero"></div>
+          
         </div>
 
         {/** 
@@ -125,7 +126,7 @@ export default function Hero() {
             
             {/** Hero Heading */}
             <h1 className="special-font hero-heading text-white">
-              redefi<b>n</b>e
+              <b>c</b>yber<b>s</b>et
             </h1>
 
             {/** 
@@ -146,14 +147,24 @@ export default function Hero() {
              * - `text-black bg-persian-red flex-center gap-1` → 
              *   Red background, black text, flexbox centering, spacing.
              */}
+             <div className="flex space-x-2">
             <Button
               id="watch-trailer"
               title="Watch trailer"
               leftIcon={<TiLocationArrow />}
               rightIcon=""
-              className="text-black bg-persian-orange flex-center gap-1"
+              className="text-white bg-persian-red-90 flex-center gap-1"
               textSize="text-xl"
             />
+             <Button
+              id="watch-trailer"
+              title="Watch trailer"
+              leftIcon={<TiLocationArrow />}
+              rightIcon=""
+              className="text-black bg-white flex-center gap-1"
+              textSize="text-xl"
+            />
+            </div>
           </div>
         </div>
       </div>

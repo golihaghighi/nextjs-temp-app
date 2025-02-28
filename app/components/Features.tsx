@@ -58,10 +58,10 @@ export default function Features() {
          * - `max-w-md opacity-50` → Limits width for readability and reduces text opacity.
          */}
         <div className="px-5 py-32">
-          <p className="font-circular-web text-lg text-blue-50">
+          <p className="font-circular-web text-lg text-white">
             Into the Metagame Layer
           </p>
-          <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
+          <p className="max-w-md font-circular-web text-lg text-white opacity-50">
             Immerse yourself in a rich and ever-expanding universe where a vibrant
             array of products converge into an interconnected overlay experience on your world.
           </p>

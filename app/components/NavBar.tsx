@@ -61,12 +61,13 @@ export default function NavBar() {
             <Button
               id="product-button"
               title="Contact Us"
+              src="/contact"
               rightIcon={<TiLocationArrow />}
               leftIcon=""
               className="bg-white md:flex hidden items-center justify-center gap-1"
               textSize="text-xs"
             /> 
-            {/* FIXME:correct onclick url */}
+           
           </div>
 
           {/* Navigation Links and Audio Button */}

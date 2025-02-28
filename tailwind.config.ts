@@ -30,7 +30,7 @@ const config: Config = {
        * Adds smooth transitions for animations
        */
       transitionTimingFunction: {
-        "custom-ease": "cubic-bezier(0.65, 0.05, 0.36, 1)", 
+        "custom-ease": "cubic-bezier(0.65, 0.05, 0.36, 1)",
       },
 
       /**
@@ -49,8 +49,6 @@ const config: Config = {
        * Includes Persian colors & famous colors
        */
       colors: {
-       
-
         /* 🔹 Persian Colors with Tints & Shades */
         "persian-blue": {
           DEFAULT: "#0067a5",
@@ -117,7 +115,7 @@ const config: Config = {
           80: "#872524",
           90: "#711F1F",
           95: "#5C1A1A",
-          99: "#1a0000",
+          99: "#0f0000",
         },
 
         "persian-green": {
@@ -153,7 +151,6 @@ const config: Config = {
           95: "#603B26",
           99: "#230000",
         },
-      
 
         /* 🔹 Famous Colors */
         reds: {
@@ -267,9 +264,9 @@ const config: Config = {
           ceramic: "#FCFFF9",
           magnolia: "#F8F4FF",
         },
-         /* 🔹 Base Colors */
-         black: "#1a0000",
-         white: "#fffff8",
+        /* 🔹 Base Colors */
+        black: "#0f0000",
+        white: "#fffff8",
       },
     },
   },

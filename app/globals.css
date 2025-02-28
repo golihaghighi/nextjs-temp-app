@@ -17,8 +17,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* === FONT DEFINITIONS === */
 @layer base {
   @font-face {
@@ -51,7 +49,7 @@
 @layer utilities {
   /* Border with opacity */
   .border-hsla {
-    @apply border border-white/20;
+    @apply border border-white/30;
   }
 
   /* Navigation Hover Button */
@@ -88,12 +86,18 @@
   .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-
+  .mask-hero {
+    @apply absolute inset-0 bg-persian-red-99 opacity-65;
+  }
   /* Special Font for <b> Elements */
   .special-font b {
     font-family: "Zentry";
     font-feature-settings: "ss01" on;
-    @apply text-persian-red-90;
+    @apply text-persian-red-70;
+  }
+
+  .subtitle p {
+    @apply font-general text-2xl  md:text-base;
   }
 
   /* Hero Section Title */

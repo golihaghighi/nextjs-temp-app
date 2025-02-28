@@ -25,10 +25,11 @@
 import clsx from "clsx"; // Utility for handling conditional class names
 
 // Define TypeScript props for the Button component
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
   rightIcon?: React.ReactNode; // Optional right icon (e.g., arrow icon)
   leftIcon?: React.ReactNode; // Optional left icon (e.g., back icon)
   textSize?: string; // Allows customizing text size
+  src?: string; // Allows customizing text size
 }
 
 /**
@@ -41,6 +42,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({
   id,
   title,
+  src="#",
   rightIcon = "",
   leftIcon = "",
   className = "",
@@ -61,9 +63,10 @@ export function Button({
      * - `rounded-full` → Gives the button rounded edges.
      * - `px-7 py-3` → Adds padding (`px` for left/right, `py` for top/bottom).
      */
-    <button
+    <a
       {...rest}
       id={id}
+      href={src}
       className={clsx(
         "group relative z-10 w-fit cursor-pointer overflow-hidden rounded-full px-7 py-3",
         className
@@ -116,6 +119,6 @@ export function Button({
 
       {/* Right Icon (if provided) */}
       {rightIcon}
-    </button>
+    </a>
   );
 }

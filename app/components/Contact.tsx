@@ -121,7 +121,7 @@ export default function Contact() {
            * - `mb-10` → Adds margin-bottom for spacing.
            * - `font-general text-[10px] uppercase` → Uses general font, `10px` text size, and uppercase letters.
            */}
-          <p className="mb-10 font-general text-[10px] uppercase">
+          <p className="subtitle mb-5 uppercase">
             Join Zentry
           </p>
 
